@@ -12,7 +12,7 @@ var jsonparser = bodyParser.json();
 
 var indexRouter = require("./route/index");
 
-const fileupload = require("express-fileupload");
+// const fileupload = require("express-fileupload");
 
 var app = express();
 app.use(express.static("./image"));
@@ -31,7 +31,7 @@ app.use(express.static(path.join(__dirname, "public")));
 const baseUrl = "";
 app.use(cors({ origin: "*" }));
 // app.use(fileupload({useTempFiles:true,tempFileDir:"./image"}));
-app.use(fileupload());
+// app.use(fileupload());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json({ type: "application/*+json" }));
 
