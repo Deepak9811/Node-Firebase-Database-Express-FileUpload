@@ -1,4 +1,4 @@
-# Using express-fileUpload in Node js
+# Using express-fileUpload Package in Node js
 
 Uploading image :- 
 1. In Firebase.
