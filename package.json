@@ -1,0 +1,26 @@
+{
+  "name": "node-firebase-database",
+  "version": "1.0.0",
+  "description": "using firebase database CRUD operation",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www"
+  },
+  "author": "Deepak Singh",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "express-fileupload": "^1.4.0",
+    "firebase": "^8.6.8",
+    "image-to-base64": "^2.2.0",
+    "jade": "^1.11.0",
+    "json-parser": "^3.1.2",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^2.0.18"
+  }
+}
