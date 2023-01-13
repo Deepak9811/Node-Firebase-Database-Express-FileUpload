@@ -22,49 +22,22 @@ router.post("/", function (req, res, next) {
 // by express-fileupload
 const path = require("path")
 
-// router.post("/uploadfile", function (req, res, next) {
-//   const file = req.files;
-//   console.log(file)
-  
-//   let fileNmae = Date.now()+'-'+req.files.myFiles.name
-//   let newPath = path.join(process.cwd(),'image',fileNmae)
-//   req.files.myFiles.mv(newPath)
-//   console.log(file)
-//   // upload.single('myFiles')
-//   if (file) {
-//     res.json({ status: true, data: file });
-//   } else {
-//     res.send("please select file");
-//   }
-  
-// });
-
-
-// SET STORAGE by multer
-var storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "uploads");
-  },
-  filename: function (req, file, cb) {
-    cb(null, file.originalname);
-  },
-});
-
-var upload = multer({ storage: storage }).array('myFiles', 12)
-
-router.post("/up",(req,res)=>{
+router.post("/uploadfile", function (req, res, next) {
   const file = req.files;
   console.log(file)
-  upload(req,res,(error)=>{
-    if(error){
-      console.log("Error :- ",error)
-      res.send(error)
-    }else{
-      console.log(req.files)
-      res.send("test")
-    }
-  })
-})
+  
+  let fileNmae = Date.now()+'-'+req.files.myFiles.name
+  let newPath = path.join(process.cwd(),'image',fileNmae)
+  req.files.myFiles.mv(newPath)
+  console.log(file)
+  // upload.single('myFiles')
+  if (file) {
+    res.json({ status: true, data: file });
+  } else {
+    res.send("please select file");
+  }
+  
+});
 
 
 
@@ -100,5 +73,35 @@ router.post("/post", function (req, res, next) {
     });
   }
 });
+
+
+// SET STORAGE by multer
+// var storage = multer.diskStorage({
+//   destination: function (req, file, cb) {
+//     cb(null, "uploads");
+//   },
+//   filename: function (req, file, cb) {
+//     cb(null, file.originalname);
+//   },
+// });
+
+// var upload = multer({ storage: storage }).array('myFiles', 12)
+
+// router.post("/up",(req,res)=>{
+//   const file = req.files;
+//   console.log(file)
+//   upload(req,res,(error)=>{
+//     if(error){
+//       console.log("Error :- ",error)
+//       res.send(error)
+//     }else{
+//       console.log(req.files)
+//       res.send("test")
+//     }
+//   })
+// })
+
+
+
 
 module.exports = router;
